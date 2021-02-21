@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-height: 46px;
+}
+
 html {
-    font-family: Helvetica, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #main {
@@ -13,41 +17,95 @@ html {
 }
 
 #header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
     background-color: #000;
-    height: 46px;
+    height: var(--header-height);
 }
 
 #nav {
-
+    display: inline-block;
 }
 
-#nav li:hover a {
+#nav .subnav li:hover a,
+#nav > li:hover > a {
     color: #000;
-    background-color: rgb(204, 204, 204);
+    background-color: #ccc;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li {
+    display: inline-block;
+    position: relative;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0 , 0.4);
+}
+
+#nav .subnav a {
+    color: #000;
+    line-height: 38px;
+    padding: 0 12px;
+    display: block;
+    min-width: 150px;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0 24px;
+    line-height: var(--header-height);
     display: inline-block;
 }
 
-#nav li {
-    display: inline-block;
-    padding: 0 12px;
+#nav .nav-see-more {
+    font-size: 12px;
 }
 
 #nav li a {
     text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    line-height: 46px;
-    padding: 0 16px;
 }
 
-#slider {
-    background-color: #333;
-    min-height: 500px;
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+    /* cursor: pointer; Đặt ở đây cũng ok */ 
+}
 
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .nav-search {
+    font-size: 16px;
+    color: #fff;
+    line-height: var(--header-height)
+}   
+
+#slider {
+    margin-top: var(--header-height); 
+    /* Vì header đang có position là fixed nên nó đè lên slider. 
+    Chỉnh margin của slider bằng chiều cao của header */
 }
 
 #content {
-
 }
 
 #footer {
