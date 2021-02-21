@@ -9,7 +9,7 @@
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 #main {
@@ -23,6 +23,7 @@ html {
     top: 0;
     background-color: #000;
     height: var(--header-height);
+    z-index: 1; /* cho nó nổi lên hẳn trên slider*/
 }
 
 #nav {
@@ -100,9 +101,32 @@ html {
 }   
 
 #slider {
+    position: relative;
     margin-top: var(--header-height); 
     /* Vì header đang có position là fixed nên nó đè lên slider. 
     Chỉnh margin của slider bằng chiều cao của header */
+
+    padding-top: 50%; /* 50% chiều ngang */
+    background: url('/assets/img/slider/slider1.png') top center/cover no-repeat;
+}
+
+#slider .text-content {
+    color: #fff;
+    position: absolute;
+    bottom: 46px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 700;
+    font-size: 32px;
+    padding-bottom: 25px;
+}
+
+#slider .text-description {
+    font-size: 16px;
 }
 
 #content {
