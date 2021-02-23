@@ -9,7 +9,7 @@
 }
 
 html {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .clear {
@@ -23,13 +23,12 @@ html {
 }  
 
 .row {
-    margin: 0 16px;
 }
 
 .col {
     float: left;
+    padding: 8px;
 }
-
 
 .col-1 {
     width: 100%;
@@ -200,6 +199,7 @@ html {
 
 #content .member-name {
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 #content .member-image {
@@ -220,10 +220,6 @@ html {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 10px 16px;
     background-color: #fff;
-}
-
-#content .tour-info .sold-out {
-    margin-left: 
 }
 
 #content .tour-info .sold-out {
@@ -271,7 +267,7 @@ html {
 }
 
 #content .places-list .place-name {
-    font-weight: 600;
+    font-weight: 520;
 }
 
 #content .places-list .place-date {
@@ -310,12 +306,13 @@ html {
     padding: 8px; 
     border: 1px solid rgba(0, 0, 0 , 0.4);
     margin: 4px;
-    font-size: 16px;
+    font-size: 16px;  
+    width: 100%;
 }
 
 #content .form-send-btn {
     float: right;
-    margin: 8px 12px;
+    margin: 8px 3px 8px 12px;
     background-color: #000;
     color: #fff;
     padding: 12px;
