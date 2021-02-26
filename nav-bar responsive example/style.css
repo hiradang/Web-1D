@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+/* Article */
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+/* nav-mobile */
+.nav__bars-btn {
+    font-size: 32px;
+    color: #fff;
+    display: none;
+}
+
+.nav__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    animation: fadeIn linear 0.3s;
+    /* Hieu ung cho lop overlay voi keyframes la fadeIn */
+}
+
+.nav__mobile {
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform linear .25s, opacity linear .25s;
+    /* 
+        line 82 equals with
+        transition: all linear 0.3s 
+        // áp dụng cho tất cả thuộc tính có sự thay đổi
+    */
+    /* Hieu ung cho nav_mobile truc tiep trong transform */
+}
+
+.nav__mobile-list li {
+    list-style-type: none;
+}
+
+.nav__mobile-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.4rem;
+    display: block;
+    padding: 16px 0;
+}
+
+.nav__mobile-close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 24px;
+}
+
+.nav__mobile-close-btn:hover{
+    cursor: pointer;
+}
+
+.mobile-input:checked ~ .nav__overlay {
+    display: block;
+}
+
+.mobile-input:checked ~ .nav__mobile {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.mobile-input {
+    display: none;
+}
+
+/* Tablet and mobile */
+
+@media only screen and (max-width: 1023px) {
+    .nav__bars-btn {
+        display: block;
+        margin-left: 16px;
+    }
+
+    .nav__pc {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
