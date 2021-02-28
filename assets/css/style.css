@@ -134,7 +134,7 @@ html {
     Chỉnh margin của slider bằng chiều cao của header */
 
     padding-top: 50%; /* 50% chiều ngang */
-    background: url('/assets/img/slider/slider1.png') top center/cover no-repeat;
+    background: url('../img/slider/slider1.png') top center/cover no-repeat;
 }
 
 #slider .text-content {
@@ -155,6 +155,7 @@ html {
 
 #slider .text-description {
     font-size: 16px;
+    text-shadow: 0 0 1px #000;
 }
 
 #content {
@@ -254,8 +255,10 @@ html {
 }
 
 #content .places-list .place-content {
+    position: relative;
     background-color: #fff;
     padding: 16px;
+    min-height: 200px;
 }
 
 #content .places-list .place-img {
@@ -285,7 +288,9 @@ html {
     color: #fff;
     text-decoration: none;
     padding: 8px 16px;
-    display: inline-block
+    display: inline-block;
+    position: absolute;
+    bottom: 16px;
 }
 
 #content .places-list .place-buy-btn:hover {
@@ -429,7 +434,7 @@ html {
 
 /* PC */
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     #nav__mobile {
         display: none;
     }
@@ -438,7 +443,7 @@ html {
 
 /* Tablet  */
 
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
     .band-member {
         display: flex;
         flex-wrap: wrap-reverse;
@@ -453,18 +458,76 @@ html {
         width: 30%;
     }
 
+    #content .fan-info .form-content {
+        padding: 12px;
+    }
+
+    .social-media-icons i {
+        margin: 0 8px;
+    }
+
 }
 
 /* Mobile */
 
-@media (max-width: 739px) {
+@media (max-width: 46.1875em) {
     #nav,
     #header .search-btn {
         display: none;
     }
 
+    .s-full-width {
+        width: 100%;
+    }
+
     #header .nav__mobile-menu {
         display: inline;
+    }
+
+    #content .member-item {
+        width: 100%;
+    }
+
+    #content .member-image {
+        width: 80%;
+    }
+
+    #content .member-item + .member-item {
+        padding-top: 50px;
+    }
+
+    #content .places-list .place-item {
+        width: 100%;
+    }
+    
+    .places-list .place-item + .place-item {
+        margin-top: 32px;
+    }
+
+    .fan-info {
+        margin-left: -12px;
+    }
+
+    .fan-info .send-btn {
+        margin-left: 13px;
+    }
+
+}
+
+    /* Tablet and Mobile  */
+
+@media (max-width: 63.9375em) {
+    #content .contact-info .info {
+        line-height: 2;
+    }
+
+    #footer .social-media-icons a {
+        font-size: 32px;
+    }
+
+    #footer .coyright,         
+    #footer .coyright a {
+        padding: 12px 0;
     }
 
 }
