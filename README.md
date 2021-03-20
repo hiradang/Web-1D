@@ -1,4 +1,6 @@
-# Web-1D
+# A website about One direction
+
+Take a look at this link: https://hiradang.github.io/web-onedirection/
 
 Một project đơn giản sử dụng HTML và CSS để tạo một trang web với giao diện cơ bản. 
 
